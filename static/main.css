@@ -184,15 +184,18 @@ ul{
 
 .calendar_navigation a {
     text-decoration: none;
-    color: #007BFF;
+    color: #F4C3C2;
     margin: 0 10px;
     font-size: 1.2em;
     font-weight: bold;
 }
 
 .calendar_navigation a:hover {
-    color: #0056b3;
+    color: #b300aa;
+    transform: scale(1.1); /* Slight zoom effect */
+    text-shadow: 0 0 5px rgba(255, 255, 255, 0.7); /* Glow */
 }
+
 
 /* register box */
 .register_box {
