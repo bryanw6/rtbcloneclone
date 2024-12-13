@@ -2,6 +2,12 @@
     font-size: 20px;
     margin: 0;
     padding: 0;
+    
+}
+
+body{
+    background: #422847
+    /* background: linear-gradient(135deg, #422847, #734f96); Gradient background */
 
 }
 
@@ -16,7 +22,7 @@ ul{
 .wrapper{
     
     height: 17em;
-    background-image: url('../static/gradient-emerald-background.jpg'); 
+    background-image: url('../static/purple-threads-abstract.jpg'); 
     background-size: cover;
     background-repeat: no-repeat;
     color: cornsilk;
@@ -47,6 +53,9 @@ ul{
     
 }
 
+.header-content{
+    padding-top: 2em;
+}
 
 .header-content h2 {
     text-align: left;
@@ -101,6 +110,12 @@ ul{
     color: #666;
 }
 
+/* calendar_events */
+.calendar_events h1{
+    text-align: center;
+    color: #F4C3C2;
+}
+
 .calendar_events table {
     width: 100%;
     border-collapse: collapse;
@@ -114,11 +129,13 @@ ul{
 }
 
 .calendar_events th {
-    background-color: #b91b1b;
+    background-color: #9C27B0;
 }
 
 .calendar_events td {
     vertical-align: top;
+    background-color: #734f96;
+    color: white;
 }
 
 .calendar_events form {
@@ -134,10 +151,13 @@ ul{
     margin-bottom: 5px;
     padding: 5px;
     font-size: 0.9em;
+    background-color: #F5F5F5;
+    border: #9C27B0;
+
 }
 
 .calendar_events button {
-    background-color: #007BFF;
+    background-color: #F4C3C2;
     color: white;
     border: none;
     padding: 5px 10px;
@@ -147,13 +167,14 @@ ul{
 }
 
 .calendar_events button:hover {
-    background-color: #0056b3;
+    background-color: #f9abaa;
 }
 
 .calendar_events form {
     display: flex;
     flex-direction: column;
     align-items: center;
+    
 }
 
 .calendar_navigation {
@@ -171,4 +192,51 @@ ul{
 
 .calendar_navigation a:hover {
     color: #0056b3;
+}
+
+/* register box */
+.register_box {
+    background: linear-gradient(135deg, #422847, #734f96); /* Gradient background */
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.2);
+    max-width: 300px;
+    margin-left: 50px; /* Move it slightly to the right */
+    margin: 50px auto;
+    text-align: center;
+}
+
+.register_box form {
+    display: flex;
+    flex-direction: column;
+}
+
+.register_box input[type="text"],
+.register_box input[type="password"] {
+    width: 100%;
+    padding: 10px;
+    margin: 10px 0;
+    border: none;
+    border-radius: 5px;
+    box-shadow: 0px 2px 4px rgba(0, 0, 0, 0.2);
+}
+
+.register_box button {
+    background: #6c63ff;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    padding: 10px;
+    font-size: 16px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+.register_box button:hover {
+    background: #5a52e0;
+}
+
+.register_box input::placeholder {
+    color: #ccc;
+    font-style: italic;
 }

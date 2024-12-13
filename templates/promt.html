@@ -5,40 +5,65 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Welcome</title>
     <style>
-        body {
-            font-family: Arial, sans-serif;
-            text-align: center;
-            margin-top: 100px;
-        }
+       body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    height: 100vh; /* Ensures full viewport height */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background: linear-gradient(135deg, #422847, #734f96); /* Gradient background */
+    color: white;
+}
 
-        .button-container {
-            display: flex;
-            justify-content: center;
-            gap: 20px;
-        }
+h1 {
+    font-size: 36px;
+    margin-bottom: 20px;
+}
 
-        .button-container a {
-            text-decoration: none;
-            background-color: #4CAF50;
-            color: white;
-            padding: 15px 32px;
-            border-radius: 5px;
-            font-size: 16px;
-            transition: background-color 0.3s;
-        }
+.button-container {
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+    margin-top: 20px;
+}
 
-        .button-container a:hover {
-            background-color: #45a049;
-        }
+.button-container a {
+    text-decoration: none;
+    background-color: #4CAF50; /* Green button color */
+    color: white;
+    padding: 15px 32px;
+    border-radius: 5px;
+    font-size: 16px;
+    font-weight: bold;
+    transition: background-color 0.3s ease, transform 0.3s ease;
+    box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.2); /* Button shadow */
+}
+
+.button-container a:hover {
+    background-color: #45a049; /* Darker green on hover */
+    transform: scale(1.05); /* Slight zoom effect */
+}
+
+.container {
+    text-align: center;
+    padding: 20px;
+    background: rgba(255, 255, 255, 0.1); /* Transparent box */
+    border-radius: 10px;
+    box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.3); /* Shadow around container */
+}
     </style>
 </head>
 <body>
 
-    <h1>Welcome to rtb</h1>
+    <div class="container">
+        <h1>Welcome to RTB</h1>
 
-    <div class="button-container">
-        <a href="{{ url_for('login') }}">Login</a>
-        <a href="{{ url_for('register') }}">Register</a>
+        <div class="button-container">
+            <a href="{{ url_for('login') }}">Login</a>
+            <a href="{{ url_for('register') }}">Register</a>
+        </div>
     </div>
 
 </body>
