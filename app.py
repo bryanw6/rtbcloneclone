@@ -9,8 +9,9 @@ import requests
 
 events = {}
 
-NETIO_BASE_URL = "http://192.168.188.28/netio.json"
-NETIO_AUTH = ("admin", "admin")
+NETIO_JSON_URL = "http://192.168.188.28/netio.json"
+USERNAME = ("admin")
+PASSWORD = ('admin')
 
 app = Flask(__name__)
 app.secret_key = 'room_temperature'
@@ -166,5 +167,21 @@ def tenants_page():
 @login_required
 def services_page():
     return render_template('services.html')
+
+@app.route('/netio')
+@login_required
+def netio_page():
+    try:
+        # Fetch the data from NETIO device
+        response = requests.get(NETIO_JSON_URL, auth=(USERNAME, PASSWORD))
+        response.raise_for_status()
+        json_data = response.json()  # Parse the JSON data
+    except Exception as e:
+        return f"Error fetching NETIO data: {e}"
+
+    # Render the data on a dedicated template
+    return render_template('netio.html', data=json_data)
+
+
 
 app.run(host='0.0.0.0', port=5000, debug=True)
